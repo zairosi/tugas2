@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 class DetailScreen extends StatelessWidget {
   const DetailScreen({Key? key}) : super(key: key);
@@ -42,7 +40,7 @@ class DetailScreen extends StatelessWidget {
                   ),
                   Column(
                     children: const <Widget>[
-                      Icon(Icons.airplane_ticket_sharp),
+                      Icon(Icons.paid_outlined),
                       Text('Rp. 10.000,-'),
                     ],
                   ),
@@ -90,6 +88,13 @@ class DetailScreen extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(25.0),
                     child: Image.asset('assets/images/4.jpg'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                    child: Image.asset('assets/images/2.png'),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
