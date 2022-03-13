@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'model/tourism_place.dart';
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  const DetailScreen({Key? key, required this.place}) : super(key: key);
+
+  final TourismPlace place;
 
   @override
   Widget build(BuildContext context) {
@@ -9,13 +13,13 @@ class DetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Image.asset('assets/images/1.jpg', height: 300.0),
+            Image.asset(place.image1, height: 300.0),
             Container(
               margin: const EdgeInsets.only(top: 16.0),
-              child: const Text(
-                'Surabaya Submarine Monument',
+              child: Text(
+                place.nama,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30.0,
                   fontFamily: 'Gendis-Script',
                 ),
@@ -27,21 +31,21 @@ class DetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
-                    children: const <Widget>[
+                    children: <Widget>[
                       Icon(Icons.calendar_today),
-                      Text('Open Everyday'),
+                      Text(place.hari),
                     ],
                   ),
                   Column(
-                    children: const <Widget>[
+                    children: <Widget>[
                       Icon(Icons.alarm_sharp),
-                      Text('08:00 - 16:00'),
+                      Text(place.jam),
                     ],
                   ),
                   Column(
-                    children: const <Widget>[
+                    children: <Widget>[
                       Icon(Icons.paid_outlined),
-                      Text('Rp. 10.000,-'),
+                      Text(place.harga),
                     ],
                   ),
                 ],
@@ -49,8 +53,8 @@ class DetailScreen extends StatelessWidget {
             ),//Container for Icons
             Container(
               padding: const EdgeInsets.all(16.0),
-              child: const Text(
-                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+              child: Text(
+                place.deskripsi,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 16.0,
@@ -65,36 +69,21 @@ class DetailScreen extends StatelessWidget {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(25.0),
-                    child: Image.network(
-                        'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    child: Image.asset(place.image2),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(25.0),
-                    child: Image.asset('assets/images/2.png'),
+                    child: Image.asset(place.image3),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(25.0),
-                    child: Image.asset('assets/images/3.jpg'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(25.0),
-                    child: Image.asset('assets/images/4.jpg'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(25.0),
-                    child: Image.asset('assets/images/2.png'),
+                    child: Image.asset(place.image4),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
