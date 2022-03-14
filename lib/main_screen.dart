@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/basic.dart';
 import 'package:tugas2/detail_screen.dart';
 
-import 'model/tourism_place.dart';
+import 'package:tugas2/model/tourism_place.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
