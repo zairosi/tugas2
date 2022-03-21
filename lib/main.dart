@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:tugas2/provider/done_tourism_provider.dart';
 import 'main_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Wisata Surabaya',
-      theme: ThemeData(),
-      home: const MainScreen(),
+    return ChangeNotifierProvider(
+      create: (context) => DoneTourismProvider(),
+        child: MaterialApp(
+          title: 'Wisata Surabaya',
+          theme: ThemeData(),
+          home: MainScreen(),
+      )
     );
   }
 }
