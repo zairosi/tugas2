@@ -26,9 +26,29 @@ class DoneTourismList extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    place.nama,
-                    style: const TextStyle(fontSize: 16.0),
+                  Expanded(
+                    flex: 1,
+                    child: Image.asset(place.image1),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Text(
+                            place.nama,
+                            style: const TextStyle(fontSize: 16.0),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(place.lokasi),
+                        ],
+                      ),
+                    ),
                   ),
                   const Icon(Icons.done_outline),
                 ],

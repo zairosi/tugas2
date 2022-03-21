@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tugas2/done_tourism_list.dart';
-
-import 'package:tugas2/model/tourism_place.dart';
 import 'package:tugas2/tourism_list.dart';
 
 class MainScreen extends StatefulWidget {
